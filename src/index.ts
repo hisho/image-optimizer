@@ -2,7 +2,7 @@ import minimist from 'minimist'
 import chokidar from 'chokidar'
 import path from 'path'
 
-const confg = {
+const config = {
   src: 'src/images/',
 }
 
@@ -16,7 +16,7 @@ export const main = async (args: string[]) => {
   if (argv.watch !== undefined) {
     chokidar
       .watch(
-        ['**/*.png', '**/*.jpg'].map((n) => path.join(confg.src, n)),
+        ['**/*.png', '**/*.jpg'].map((n) => path.join(config.src, n)),
         {
           ignoreInitial: true,
         }
