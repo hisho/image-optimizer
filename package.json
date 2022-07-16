@@ -1,7 +1,7 @@
 {
   "name": "@hisho/image-optimizer",
   "version": "0.0.1",
-  "types": "dist/cli.d.ts",
+  "types": "dist/index.d.ts",
   "bin": "bin/index.js",
   "files": [
     "dist"
@@ -29,9 +29,11 @@
   },
   "devDependencies": {
     "@tsconfig/strictest": "^1.0.1",
+    "@types/glob": "^7.2.0",
     "@types/minimist": "^1.2.2",
     "@types/node": "^18.0.5",
     "@types/prettier": "^2.6.3",
+    "@types/sharp": "^0.30.4",
     "child_process": "^1.0.2",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
@@ -39,6 +41,10 @@
   },
   "dependencies": {
     "chokidar": "^3.5.3",
-    "minimist": "^1.2.6"
+    "dayjs": "^1.11.3",
+    "glob": "^8.0.3",
+    "image-size": "^1.0.2",
+    "minimist": "^1.2.6",
+    "sharp": "^0.30.7"
   }
 }
