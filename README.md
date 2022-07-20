@@ -25,8 +25,8 @@ package.jsonのscriptsに以下を追加する
 ```json
 {
   "scripts": {
-    "watch:image": "./node_modules/@hisho/image-optimizer/bin/index.js --watch", 
-    "build:image": "./node_modules/@hisho/image-optimizer/bin/index.js"
+    "watch:image": "image-optimizer --watch", 
+    "build:image": "image-optimizer"
   }
 }
 ```
@@ -37,4 +37,3 @@ package.jsonのscriptsに以下を追加する
 - 画像の圧縮率を変更できるようにする
 - 画像のリサイズを変更できるようにする
 - 出力と入力を自由に設定できるようにする
-- `scripts`の指定の方法を`@hisho/image-optimizer --watch`でできるようにする
