@@ -1,8 +1,10 @@
 {
   "name": "@hisho/image-optimizer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "types": "dist/index.d.ts",
-  "bin": "bin/index.js",
+  "bin": {
+    "image-optimizer": "bin/index.js"
+  },
   "files": [
     "dist"
   ],
