@@ -1,7 +1,6 @@
 # image-optimizer
 
-sharpを使って画像圧縮するcli
-
+sharp を使って画像圧縮する cli
 
 ## Install
 
@@ -20,18 +19,20 @@ $ yarn add -D @hisho/image-optimizer
 5. `-w`または`--watch`をつけるとファイルを監視する
 
 ## Usage
-package.jsonのscriptsに以下を追加する
+
+package.json の scripts に以下を追加する
 
 ```json
 {
   "scripts": {
-    "watch:image": "image-optimizer --watch", 
+    "watch:image": "image-optimizer --watch",
     "build:image": "image-optimizer"
   }
 }
 ```
 
 ## TODO
+
 - オプションを受け取れるようにする
 - マッピングファイルの出力の有無を指定できるようにする
 - 画像の圧縮率を変更できるようにする
