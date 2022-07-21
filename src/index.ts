@@ -72,16 +72,23 @@ export const main = async (args: string[]) => {
    * }[]
    */
   const createImageMapping = () => {
-    return getImagePath().map((currentPath) => {
+    const imagePaths = getImagePath()
+    return imagePaths.map((currentPath) => {
       const { dir, name, ext } = path.parse(currentPath)
       const imagePath = path.join(resolvedConfig.src, currentPath)
       const stat = fs.statSync(imagePath)
       const updateTime = dayjs(stat.mtime).format('YYYYMMDDHHmmss')
       const { width, height } = sizeOf(imagePath)
+      const spName = `${name}_sp`
+      const mobileImageName = imagePaths.find((n) => {
+        const nName = path.parse(n)
+        return nName.name.endsWith(spName)
+      })
       return {
         width,
         height,
         original: pathJoinImagesDir(currentPath),
+        mobileImageName: mobileImageName ?? null,
         paths: resolvedConfig.deviceSizes.map((deviceSize) => {
           return {
             size: deviceSize,
@@ -187,11 +194,11 @@ export type ImagesPath = typeof imagesPath`,
         createImageMetaData()
       })
   } else {
-    getImagePath().forEach((imagePath) => {
-      const imagePathWithSrc = path.join(resolvedConfig.src, imagePath)
-      console.log('Building...', imagePathWithSrc)
-      write(imagePathWithSrc)
-    })
+    // getImagePath().forEach((imagePath) => {
+    //   const imagePathWithSrc = path.join(resolvedConfig.src, imagePath)
+    //   console.log('Building...', imagePathWithSrc)
+    //   write(imagePathWithSrc)
+    // })
     createImageMetaData()
   }
 }
