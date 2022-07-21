@@ -194,11 +194,11 @@ export type ImagesPath = typeof imagesPath`,
         createImageMetaData()
       })
   } else {
-    // getImagePath().forEach((imagePath) => {
-    //   const imagePathWithSrc = path.join(resolvedConfig.src, imagePath)
-    //   console.log('Building...', imagePathWithSrc)
-    //   write(imagePathWithSrc)
-    // })
+    getImagePath().forEach((imagePath) => {
+      const imagePathWithSrc = path.join(resolvedConfig.src, imagePath)
+      console.log('Building...', imagePathWithSrc)
+      write(imagePathWithSrc)
+    })
     createImageMetaData()
   }
 }
