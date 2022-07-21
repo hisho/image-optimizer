@@ -17,7 +17,6 @@ export const main = async (args: string[]) => {
     string: ['watch'],
     alias: { w: 'watch' },
   })
-  console.log(argv)
 
   const resolvedConfig = { ...config }
 
@@ -78,7 +77,6 @@ export const main = async (args: string[]) => {
       const imagePath = path.join(resolvedConfig.src, currentPath)
       const stat = fs.statSync(imagePath)
       const updateTime = dayjs(stat.mtime).format('YYYYMMDDHHmmss')
-      console.log(updateTime)
       const { width, height } = sizeOf(imagePath)
       return {
         width,
