@@ -88,7 +88,9 @@ export const main = async (args: string[]) => {
         width,
         height,
         original: pathJoinImagesDir(currentPath),
-        mobileImageName: mobileImageName ?? null,
+        mobileImageName: mobileImageName
+          ? pathJoinImagesDir(mobileImageName)
+          : null,
         paths: resolvedConfig.deviceSizes.map((deviceSize) => {
           return {
             size: deviceSize,
